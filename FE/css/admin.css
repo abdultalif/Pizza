@@ -1,0 +1,309 @@
+/* CSS Group 21 */
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #ff8616;
+    --text-color: #fff;
+    --text-color2: #9e9e9e;
+    --other-color: #313443;
+    --second-color: #22252e;
+    --bg-color: #111111;
+    --button-primary: #e8491d;
+
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--second-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar-navigation {
+    display: inline-block;
+    min-height: 100vh;
+    width: 80px;
+    background-color: var(--other-color);
+    float: left;
+}
+
+.sidebar-navigation ul {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.sidebar-navigation ul li {
+    padding: 28px 0;
+    cursor: pointer;
+    transition: all ease-out 120ms;
+}
+
+.sidebar-navigation ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-navigation ul li i {
+    display: block;
+    font-size: 24px;
+    transition: all ease 450ms;
+}
+
+.sidebar-navigation ul li .tooltip {
+    display: inline-block;
+    position: absolute;
+    background-color: var(--other-color);
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-top: -26px;
+    left: 90px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-navigation ul li .tooltip:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: 10px;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+}
+
+.sidebar-navigation ul li:hover {
+    background-color: var(--second-color);
+}
+
+.sidebar-navigation ul li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar-navigation ul li.active {
+    background-color: var(--second-color);
+}
+
+.sidebar-navigation ul li.active i {
+    color: var(--main-color);
+}
+
+.main-content {
+    margin-left: 80px;
+    padding: 20px;
+}
+
+.content {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+}
+
+.content h2,
+.content p {
+    margin-bottom: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--main-color);
+    text-align: center;
+    padding: 8px 100px;
+    color: var(--text-color);
+}
+
+/* Admin-testimoni&menu  */
+.main-content-testimoni,
+.main-content-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: auto;
+    height: calc(100vh - 80px);
+}
+
+.main-content-testimoni::-webkit-scrollbar,
+.main-content-menu::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.main-content-testimoni h1,
+.main-content-menu h1 {
+    color: var(--button-primary);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-container {
+    max-width: 300px;
+    flex-basis: calc(50% - 10px);
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#testimonials-container,
+#menus-container {
+    max-width: 60%;
+    margin-left: 20px;
+    overflow: auto;
+}
+
+.testimoni-container,
+.menu-container {
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+.testimoni-container th,
+.testimoni-container td,
+.menu-container th,
+.menu-container td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.testimoni-container tr:hover,
+.menu-container tr:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+
+}
+
+.testimoni-container button,
+.menu-container button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.testimoni-container button .fa-pen,
+.menu-container button .fa-pen {
+    color: green;
+}
+
+.testimoni-container button .fa-trash,
+.menu-container button .fa-trash {
+    color: red;
+}
+
+.testimoni-container tr img,
+.menu-container tr img {
+    max-width: 60px;
+}
+
+.testimoni-container button:hover,
+.menu-container button:hover {
+    opacity: 0.5;
+}
+
+/* pop up */
+/* Style the pop-up form container */
+.update-form-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the pop-up form */
+.update-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    color: var(--bg-color);
+    border-radius: 5px;
+    width: 35%;
+}
+
+/* Style the form inputs */
+.update-form input,
+.update-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style the form button */
+.update-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the form submit button on hover */
+.update-form button[type="submit"]:hover {
+    background-color: #45a049;
+}

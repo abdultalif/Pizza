@@ -1,0 +1,116 @@
+<!-- HTML Group 21 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Art Pizza 21</title>
+        <link rel="shortcut icon" type="image/png" href="./asset/iconShop.png">
+        <link rel="stylesheet" href="./css/admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <nav class="sidebar-navigation">
+            <ul>
+                <li>
+                    <a href="admin.html" class="nav-link">
+                        <i class="fa fa-home"></i>
+                        <span class="tooltip">Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="testimoni-admin.html" class="nav-link">
+                        <i class="fa-solid fa-heart-circle-bolt"></i>
+                        <span class="tooltip">Testimoni</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="menu-admin.html" class="nav-link">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        <span class="tooltip">Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="order-admin.html" class="nav-link">
+                        <i class="fa-solid fa-store"></i>
+                        <span class="tooltip">Order</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" id="logout-link">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span class="tooltip">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-content-testimoni">
+            <h1>Testimonials</h1>
+            <div class="content-wrapper">
+                <div class="form-container">
+                    <h3>Add Testimonial</h3>
+                    <form id="testimonial-form" enctype="multipart/form-data">
+                        <input type="text" id="name-input" placeholder="Name" required>
+                        <label for="image-input">Insert image</label>
+                        <input type="file" id="image-input" required>
+                        <label for="rate-input">Choose rate</label>
+                        <select id="rate-input" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="satu">1 star</option>
+                            <option value="dua">2 stars</option>
+                            <option value="tiga">3 stars</option>
+                            <option value="empat">4 stars</option>
+                            <option value="lima">5 stars</option>
+                        </select>
+                        <textarea id="message-input" placeholder="Message" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div id="testimonials-container">
+                    <table class="testimoni-container">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                </div>
+                <div id="update-form-popup" class="update-form-popup">
+                    <form id="update-testimonial-form" class="update-form" enctype="multipart/form-data">
+                        <h2>Update Testtimoni</h2>
+                        <input type="text" id="update-name-input" placeholder="Name" required>
+                        <label for="update-image-input">Insert image</label>
+                        <input type="file" id="update-image-input" required>
+                        <label for="update-rate-input">Choose rate</label>
+                        <select id="update-rate-input" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="satu">1 star</option>
+                            <option value="dua">2 stars</option>
+                            <option value="tiga">3 stars</option>
+                            <option value="empat">4 stars</option>
+                            <option value="lima">5 stars</option>
+                        </select>
+                        <textarea id="update-message-input" placeholder="Message" required></textarea>
+                        <div class="form-buttons">
+                            <button type="submit">Submit</button>
+                            <button type="button" id="cancel-button">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copyrightText">
+                <p>Copyright © 2023 The Art Pizza 21. All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- Javascript -->
+        <script src="./js/admin.js"></script>
+        <script src="./js/testimoni-admin.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>
